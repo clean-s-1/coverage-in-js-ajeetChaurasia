@@ -123,17 +123,13 @@ describe('typewise alerts', function() {
   });
 
   it('call the checkAndAlert function with TO_EMAIL', () => {
-    const mockAlertTarget2 = 'TO_EMAIL';
-    const mockTemperatureInc2 = 50;
-    const mockBatteryChar2 = {
+    const mockAtype = 'TO_EMAIL';
+    const mockTempInc2 = 50;
+    const mockBatChar2 = {
       coolingType: 'HI_ACTIVE_COOLING',
     };
 
-    alerts.checkAndAlert(
-        mockAlertTarget2,
-        mockBatteryChar2,
-        mockTemperatureInc2,
-    );
+    alerts.checkAndAlert( mockAtype, mockBatChar2, mockTempInc2);
     expect( console.log.calledWith('To: a.b@c.com') ).to.be.true;
     expect( console.log.calledWith('Hi, the temperature is too high') ).to.be.true;
   });
