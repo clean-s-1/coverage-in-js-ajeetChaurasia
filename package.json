@@ -28,6 +28,6 @@
   },
   "dependencies": {
     "jshint": "^2.13.4",
-    "chai-spies": "^1.0.0"
+    "sinon": "^14.0.0"
   }
 }
