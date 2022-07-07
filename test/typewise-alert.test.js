@@ -108,8 +108,8 @@ describe('typewise alerts', function() {
   it('call the sendToMail function with TOO_HIGH', () => {
     const breachType = 'TOO_HIGH';
     alerts.sendToEmail(breachType);
-    expect( console.log.calledWith('To: a.b@c.com') ).to.be.true;
-    expect( console.log.calledWith('Hi, the temperature is too high') ).to.be.true;
+    expect(console.log.calledWith('To: a.b@c.com') ).to.be.true;
+    expect(console.log.calledWith('Hi, the temperature is too high') ).to.be.true;
   });
 
   it('call the checkAndAlert function with TO_CONTROLLER', () => {
