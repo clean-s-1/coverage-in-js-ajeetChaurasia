@@ -109,7 +109,7 @@ describe('typewise alerts', function() {
     const breachType = 'TOO_HIGH';
     alerts.sendToEmail(breachType);
     expect(console.log.calledWith('To: a.b@c.com') ).to.be.true;
-    expect(console.log.calledWith('Hi, the temperature is too high') ).to.be.true;
+    expect(console.log.calledWith('Hi, the temperature is too high')).to.be.true;
   });
 
   it('call the checkAndAlert function with TO_CONTROLLER', () => {
@@ -128,9 +128,10 @@ describe('typewise alerts', function() {
     const mockBatChar2 = {
       coolingType: 'HI_ACTIVE_COOLING',
     };
-
+    const logMessage = 'To: a.b@c.com';
+    const logMessage2 = 'Hi, the temperature is too high';
     alerts.checkAndAlert( mockAtype, mockBatChar2, mockTempInc2);
-    expect( console.log.calledWith('To: a.b@c.com') ).to.be.true;
-    expect( console.log.calledWith('Hi, the temperature is too high') ).to.be.true;
+    expect( console.log.calledWith(logMessage) ).to.be.true;
+    expect( console.log.calledWith(logMessage2)).to.be.true;
   });
 });
